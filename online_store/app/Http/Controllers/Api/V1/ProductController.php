@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Repositories\Product\ProductRepositoryInterface;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,9 +19,10 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data = $this->repository->all($request->all());
+        return response()->json($data);
     }
 
     /**

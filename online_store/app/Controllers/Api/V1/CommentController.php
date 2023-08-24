@@ -3,10 +3,10 @@
 namespace App\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\user;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class userController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class userController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(user $user)
+    public function show(Comment $comment)
     {
         //
     }
@@ -35,7 +35,7 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -43,7 +43,7 @@ class userController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(user $user)
+    public function destroy(Comment $comment)
     {
         //
     }

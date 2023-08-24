@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->uuid();
+            $table->text('comment');
+            $table->morphs('commentable');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('parent_id')->constrained('comments')->cascadeOnDelete();
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

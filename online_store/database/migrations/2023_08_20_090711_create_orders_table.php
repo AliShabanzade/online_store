@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->uuid();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->decimal('total');
+            $table->unsignedTinyInteger('status')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
