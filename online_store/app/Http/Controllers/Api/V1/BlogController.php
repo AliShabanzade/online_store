@@ -13,7 +13,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-      return 'ok';
+      app()->setLocale('fa');
+      return trans('test.name');
     }
 
     /**
