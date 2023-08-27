@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Trait\HasCategory;
 use App\Trait\HasComment;
 use App\Trait\HasMedia;
 use App\Trait\HasUser;
+use App\Trait\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,7 +17,7 @@ class Blog extends Model
 {
     use HasFactory , HasComment;
     use SoftDeletes , HasUser;
-    use HasMedia;
+    use HasMedia , HasCategory , HasUuid;
 
     protected $fillable= ['uuid', 'published', 'user_id', 'category_id'];
 

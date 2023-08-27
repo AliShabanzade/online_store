@@ -3,14 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Trait\HasComment;
+use App\Trait\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable , HasUuid , HasComment;
 
     /**
      * The attributes that are mass assignable.
@@ -52,5 +55,15 @@ class User extends Authenticatable
 
 
 
+    // agar bekhahim gahi function boot ra dar model estefade konim bayad
+    // parent::boot ra dar trait an hazf konim , hamchenin baraye kar kardane har 2 boot bayad dar
+    //trait namgozari an ra be soorate  boot+triat anjam dahim = bootHasUuid
+//    protected static function boot()
+//    {
+//        parent::boot();
+//        static::creating(function (User $user){
+//           $user->uuid = Str::uuid();
+//        });
+//    }
 
 }

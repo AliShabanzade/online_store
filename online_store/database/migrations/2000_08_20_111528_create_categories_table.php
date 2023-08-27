@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->uuid();
-            $table->foreignId('parent_id')->constrained('categories')->cascadeOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('categories')->cascadeOnDelete();
             $table->boolean('published')->default(true);
             $table->softDeletes();
             $table->timestamps();

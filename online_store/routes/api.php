@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\V1\BlogController;
+use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('user' , \App\Http\Controllers\Api\V1\UserController::class);
+Route::apiResource('user' , UserController::class);
+
+Route::apiResource('blog' , BlogController::class);

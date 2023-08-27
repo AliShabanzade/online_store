@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CommentFactory extends Factory
 {
-    /**
+    /*  *
      * Define the model's default state.
      *
      * @return array<string, mixed>
@@ -17,7 +18,13 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'comment' => fake()->text,
+            'commentable_id' => 1,
+            'commentable_type' => '',
+            'parent_id' => null,
+            'published' => fake()->boolean,
+
         ];
     }
 }

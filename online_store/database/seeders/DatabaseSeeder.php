@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Blog;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,10 +14,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         \App\Models\User::factory(10)->create()->each(function ($user){
-            Blog::factory(1)->create();
-         });
-         }
+
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class,
+            BrandSeeder::class,
+            ProductSeeder::class,
+            CartSeeder::class,
+            OrderSeeder::class,
+            BlogSeeder::class,
+
+
+
+        ]);
+
+
+
+    }
 
 
 
