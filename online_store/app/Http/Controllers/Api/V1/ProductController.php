@@ -4,25 +4,16 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Repositories\Product\ProductRepositoryInterface;
-use http\Env\Response;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
-    public function __construct(private ProductRepositoryInterface $repository)
-    {
-
-    }
-
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $data = $this->repository->all($request->all());
-        return response()->json($data);
+        //
     }
 
     /**

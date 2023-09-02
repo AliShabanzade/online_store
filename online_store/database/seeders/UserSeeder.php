@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Blog;
+use App\Models\Cart;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\View;
@@ -29,12 +32,17 @@ class UserSeeder extends Seeder
                     'user_id' => $user->id,
 
 
+
                 ])->each(function (Blog $blog) use ($user){
                         Comment::factory(1)->create([
                             'user_id' => $user->id,
                             'commentable_id' => $blog->id,
                             'commentable_type' => Blog::class,
                         ])->each(function (Comment $comment) use ($user) {
+                              Comment::factory(rand(1,3))->create([
+                                 'user_id' => $user->id,
+                                 'parent_id' =>$comment->id,
+                              ]);
                               View::factory(rand(1,3))->create([
                                  'user_id' => $user->id,
                                  'viewable_type' => Comment::class,
@@ -67,7 +75,7 @@ class UserSeeder extends Seeder
                     'user_id' => $user->id,
                 ]);
                 // mitavan ham az each() estefade kard ya bejaye an az foreach()
-                 foreach ($productSample as $item){
+                 foreach ($productSample as $item)  {
                          Comment::factory(rand(1,3))->create([
                             'user_id' => $user->id,
                             'commentable_type' => Product::class,
@@ -82,8 +90,32 @@ class UserSeeder extends Seeder
 
                          }) ;
 
+//                    Cart::factory(1)->create([
+//                        'user_id' => $user->id,
+//                        'product_id' => $item->id,
+//                    ])->each(function (Cart $cart) use ($user , $item){
+//
+//                        Order::factory(1)->create([
+//                            'user_id' => $user->id,
+//                        ])->each(function (Order $order) use ($item) {
+//                            OrderItem::factory(1)->create([
+//
+//                                'order_id' => $order->id,
+//                                'product_id' => $item->id,
+//
+//                            ]);
+//                        });
+//
+//                        $cart->delete();
+//                    });
+
+
+
+
 
                     }
+
+
 
 
 

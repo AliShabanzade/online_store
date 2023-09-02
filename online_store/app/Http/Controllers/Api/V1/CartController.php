@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Brand;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
-class BrandController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Brand $brand)
+    public function show(Cart $cart)
     {
         //
     }
@@ -35,7 +35,7 @@ class BrandController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, Cart $cart)
     {
         //
     }
@@ -43,7 +43,7 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Brand $brand)
+    public function destroy(Cart $cart)
     {
         //
     }

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasCategory
 {
-    public function category(): HasMany
+    public function category()
     {
-        return $this->hasMany(Category::class , 'category_id');
+        return $this->belongsTo(Category::class );
     }
 }

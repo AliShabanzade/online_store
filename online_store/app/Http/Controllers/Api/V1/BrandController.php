@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
+    public function show(Brand $brand)
     {
         //
     }
@@ -35,7 +35,7 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, Brand $brand)
     {
         //
     }
@@ -43,7 +43,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comment $comment)
+    public function destroy(Brand $brand)
     {
         //
     }

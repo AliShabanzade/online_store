@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
+use App\Models\View;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ViewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blog)
+    public function show(View $view)
     {
         //
     }
@@ -35,7 +35,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, View $view)
     {
         //
     }
@@ -43,7 +43,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy(View $view)
     {
         //
     }
